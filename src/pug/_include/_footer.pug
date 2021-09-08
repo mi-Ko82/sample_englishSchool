@@ -1,0 +1,29 @@
+footer.l-footer
+  nav.l-footer__nav
+    ul.l-footer__list
+      li.l-footer__item
+        a.l-footer__link(href="#") コース一覧
+        ul.l-footer__childList
+          each item, link in { standard: 'スタンダードプラン', premium: 'プレミアムプラン', short: '短期集中プラン', everyday: '日常英会話コース', business: 'ビジネス英会話コース' }
+            li.l-footer__childItem
+              a.l-footer__childLink(href=`/course/${link}/`) #{item}
+      li.l-footer__item
+        a.l-footer__link(href="#") 講師紹介
+        ul.l-footer__childList
+          each item, link in { about: '講師について', list: '講師一覧', search: '講師を探す' }
+            li.l-footer__childItem
+              a.l-footer__childLink(href=`/lecturer/${link}/`) #{item}
+      li.l-footer__item
+        a.l-footer__link(href="#") 会社情報
+        ul.l-footer__childList
+          each item, link in { outline: '会社概要', recruit: '採用情報' }
+            li.l-footer__childItem
+              a.l-footer__childLink(href=`/company/${link}/`) #{item}
+      li.l-footer__item
+        a.l-footer__link(href="#") BBBについて
+        ul.l-footer__childList
+          each item, link in { faq: 'よくあるご質問', term: 'ご利用規約', privacypolicy: 'プライバシーポリシー', contact: 'お問い合わせ' }
+            li.l-footer__childItem
+              a.l-footer__childLink(href=`/about/${link}/`) #{item}
+  .l-footer__copyright
+    small &copy; BBB English School
