@@ -1,0 +1,75 @@
+// --------------------------
+// media query
+// --------------------------
+$breakpoints: (
+  'sm': 'screen and (min-width: 600px)',
+  'lg': 'screen and (min-width: 1025px)'
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// --------------------------
+// hover
+// --------------------------
+@mixin transition {
+  transition: $transition;
+}
+
+@mixin hover($style) {
+  @if $style == opa {
+    @include transition;
+
+    &:hover {
+      opacity: $opa;
+    }
+  } @else if $style == txt {
+    @include transition;
+
+    &:hover {
+      color: $theme-color;
+    }
+  } @else if $style == zoom-in {
+    @include transition;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  } @else if $style == zoom-out {
+    transform: scale(1.2);
+    @include transition;
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
+}
+
+// --------------------------
+// 数値から単位を削除
+// --------------------------
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// --------------------------
+// px -> vw
+// --------------------------
+@function convert-vw($px, $viewport: 375) {
+  $value: $px;
+
+  // 単位がpxの場合は、そのままの単位で返す
+  @if (unit($px) != 'px') {
+    @return $value;
+  }
+
+  $value: (strip-unit($px) / strip-unit($viewport)) * 100vw;
+  @return $value;
+}

@@ -1,12 +1,7 @@
+// resetCSS
+@import '/node_modules/modern-css-reset/dist/reset.min.css';
+
+// foundation
+@import './foundation/_var.scss';
+@import './foundation/_mixin.scss';
 @import './foundation/_base.scss';
-
-.example {
-  display: flex;
-  color: black;
-  width: 100%;
-  background-color: red;
-}
-
-h1 {
-  color: gray;
-}

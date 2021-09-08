@@ -1,3 +1,18 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: rgb(147, 233, 204);
+  font-size: 1.6rem;
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  color: $color-black;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  min-width: 320px;
+
+  &.is-open {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
 }
