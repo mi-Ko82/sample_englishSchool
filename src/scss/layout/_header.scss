@@ -1,0 +1,231 @@
+.defs {
+  display: none;
+}
+
+.l-header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+
+  &.is-open {
+    background: $theme-color;
+
+    .l-header__logo {
+      svg {
+        fill: $color-white;
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__logo {
+    svg {
+      width: 100px;
+      height: 56.28px;
+      margin-top: 25px;
+      margin-left: 25px;
+      fill: $theme-color;
+
+      @include mq(lg) {
+        margin-top: 40px;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  &__buttonBox {
+    width: 75px;
+    height: 75px;
+    background: $theme-color;
+
+    @include mq(lg) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $theme-color;
+    border: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+
+    &--line {
+      position: absolute;
+      left: 20px;
+      width: 35px;
+      height: 2px;
+      display: block;
+      background-color: $color-white;
+      transition: all 0.2s;
+
+      @include mq(lg) {
+        width: 50px;
+        left: 25px;
+      }
+
+      &:first-child {
+        top: 26px;
+
+        @include mq(lg) {
+          top: 36px;
+        }
+      }
+
+      &:nth-child(2) {
+        top: 37px;
+
+        @include mq(lg) {
+          top: 50px;
+        }
+      }
+
+      &:last-child {
+        top: 48px;
+
+        @include mq(lg) {
+          top: 64px;
+        }
+      }
+
+      &.is-open {
+        &:first-child {
+          transform: rotate(45deg);
+          transform-origin: top left;
+          left: 26px;
+        }
+
+        &:nth-child(2) {
+          transform: translateX(100px);
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+          transform-origin: bottom left;
+          top: 50px;
+          left: 26px;
+
+          @include mq(lg) {
+            top: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    background: $theme-color;
+    transition: 0.2s all;
+
+    @include mq(lg) {
+      padding-top: 40px;
+    }
+
+    &.is-open {
+      height: calc(100vh - 100px);
+      opacity: 1;
+    }
+  }
+
+  &__menuList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__menuItem {
+    margin-bottom: 20px;
+  }
+
+  &__menuButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 40px auto 0;
+    padding: 16px;
+    border: 1px solid $color-white;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-white;
+
+      .l-header__menuButton--text {
+        color: $theme-color;
+      }
+    }
+
+    &--text {
+      color: $color-white;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      transition: $transition;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      background: $color-white;
+    }
+
+    &::before {
+      top: 6px;
+      right: -6px;
+      width: 1px;
+      height: 100%;
+    }
+
+    &::after {
+      bottom: -6px;
+      left: 6px;
+      width: 100%;
+      height: 1px;
+    }
+  }
+
+  &__menuLink {
+    position: relative;
+    padding-bottom: 8px;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $color-white;
+      transition: $transition;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
