@@ -1,6 +1,9 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ImageminMozjpeg = require('imagemin-mozjpeg')
+
 
 module.exports = merge(common, {
   mode: 'production',
