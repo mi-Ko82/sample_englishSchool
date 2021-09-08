@@ -2,12 +2,12 @@ html(lang="ja")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title トップページです
+    title BBB 英会話スクール
     link(rel="stylesheet", href="./css/styles.css")
+
   body
-    h1#title トップページ
-    h2 webpackの設定をしました
-    p 結構大変でした
-    img(src="./img/profile@2x.png", alt="プロフィール写真")
+    include ./_include/_logo.pug
+
+    include ./_include/_header.pug
+
     script(src="./js/bundle.js")
-    include ./_include/_test.pug
