@@ -1,0 +1,17 @@
+header#header.l-header
+  .l-header__top
+    .l-header__logo
+      svg
+        title BBB 英会話スクール
+        use(xlink:href="#logo")
+    .l-header__buttonBox
+      button#headerBtn.l-header__button
+        - for(let i = 0; i < 3; i++)
+          span.l-header__button--line
+  nav#headerMenu.l-header__menu
+    ul.l-header__menuList
+      each item in ['BBBが選ばれる理由', '受講生の声', 'スクールの概要']
+        li.l-header__menuItem
+          a.l-header__menuLink(href="#") #{item}
+    a.l-header__menuButton(href="#")
+      span.l-header__menuButton--text 無料体験に申し込む
