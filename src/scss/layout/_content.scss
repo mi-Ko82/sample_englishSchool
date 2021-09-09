@@ -2,7 +2,8 @@ $sp-margin: 16px;
 $pc-margin: 20px;
 
 .l-content {
-  margin-top: 100px;
+  max-width: 1400px;
+  margin: 100px auto 0;
 
   &__inner {
     padding: 0 convert-vw($sp-margin);
