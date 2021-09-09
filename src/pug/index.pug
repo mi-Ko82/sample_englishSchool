@@ -1,17 +1,31 @@
 html(lang="ja")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
     title BBB 英会話スクール
     link(rel="stylesheet", href="./css/styles.css")
 
-  body
+  body.top
     include ./_include/_logo.pug
 
     include ./_include/_header.pug
 
-    main
-      div(style="height: 2000px")
+    main.l-content
+      .p-mainvisual
+        .swiper-container
+          .swiper-wrapper
+            - for (let i = 1; i < 5; i++)
+              .swiper-slide.p-mainvisual__image
+                img(src=`/img/pic_mainvisual0${i}.jpg`, srcset=`/img/pic_mainvisual0${i}.jpg 1x, /img/pic_mainvisual0${i}@2x.jpg 2x`, alt="")
+        .l-content__inner
+          .p-mainvisual__text
+            h1.p-mainvisual__title
+              | 話して学ぼう！
+              br
+              | BBB英会話スクール
+            a.p-mainvisual__button(href="#") 無料体験はこちら
+
+      div(style="height: 1000px")
 
     include ./_include/_footer.pug
 
