@@ -1,0 +1,17 @@
+$sp-margin: 16px;
+$pc-margin: 20px;
+
+.l-content {
+  margin-top: 100px;
+
+  &__inner {
+    padding: 0 convert-vw($sp-margin);
+
+    @include mq(lg) {
+      max-width: (850px - $pc-margin);
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 $pc-margin;
+    }
+  }
+}
