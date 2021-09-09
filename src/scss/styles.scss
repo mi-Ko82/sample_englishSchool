@@ -9,3 +9,10 @@
 // layout
 @import './layout/header';
 @import './layout/footer';
+@import './layout/content';
+
+// swiper
+@import '/node_modules/swiper/swiper-bundle.min.css';
+
+// pages
+@import './pages/index';
