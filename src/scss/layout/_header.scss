@@ -3,11 +3,14 @@
 }
 
 .l-header {
-  position: fixed;
   width: 100%;
   height: 100px;
+  background-color: rgba($color-white, 0.7);
 
   &.is-open {
+    position: fixed;
+    top: 0;
+    z-index: 10;
     background: $theme-color;
 
     .l-header__logo {
@@ -40,6 +43,10 @@
   }
 
   &__buttonBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
     width: 75px;
     height: 75px;
     background: $theme-color;
