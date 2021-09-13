@@ -2,9 +2,6 @@ $sp-margin: 16px;
 $pc-margin: 20px;
 
 .l-content {
-  max-width: 1400px;
-  margin: auto;
-
   &__inner {
     padding: 0 convert-vw($sp-margin);
 
@@ -13,6 +10,37 @@ $pc-margin: 20px;
       margin-left: auto;
       margin-right: auto;
       padding: 0 $pc-margin;
+    }
+  }
+
+  &__section {
+    margin-top: 80px;
+
+    @include mq(lg) {
+      margin-top: 120px;
+    }
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: $color-black;
+      margin: 14px auto 0;
+    }
+
+    @include mq(lg) {
+      font-size: 3.6rem;
+
+      &::after {
+        width: 100px;
+      }
     }
   }
 }
