@@ -181,3 +181,114 @@ $sp-side-margin: convert-vw(16px);
     }
   }
 }
+
+// 受講生の声
+.p-voice {
+  &__list {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include mq(lg) {
+      margin-top: 80px;
+    }
+  }
+
+  &__item {
+    margin-top: 40px;
+    transform: scale(0);
+    transition: transform 1s;
+
+    &.is-show {
+      transform: scale(1);
+    }
+
+    @include mq(lg) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      margin-top: 60px;
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    background-color: $color-blue-light;
+    border-radius: 15px;
+    padding: 20px;
+    line-height: 1.6875;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 15px 0 15px;
+      border-color: $color-blue-light transparent transparent transparent;
+    }
+
+    @include mq(lg) {
+      max-width: 508px;
+
+      &--left {
+        margin-left: 25px;
+
+        &::after {
+          left: -15px;
+          top: 50%;
+          transform: translate(0, -50%);
+          border-width: 15px 15px 15px 0;
+          border-color: transparent $color-blue-light transparent transparent;
+        }
+      }
+
+      &--right {
+        margin-right: 25px;
+
+        &::after {
+          left: auto;
+          right: -15px;
+          top: 50%;
+          transform: translate(0, -50%);
+          border-width: 15px 0 15px 15px;
+          border-color: transparent transparent transparent $color-blue-light;
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background-color: $color-gray-c;
+    border-radius: 60px;
+    margin: 30px auto 0;
+    overflow: hidden;
+
+    img {
+      margin-top: 10px;
+    }
+
+    @include mq(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &__name {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
