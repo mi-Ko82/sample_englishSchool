@@ -1,15 +1,14 @@
 $sp-margin: 16px;
-$pc-margin: 20px;
 
 .l-content {
   &__inner {
     padding: 0 convert-vw($sp-margin);
 
     @include mq(lg) {
-      max-width: (850px - $pc-margin);
+      max-width: 860px;
       margin-left: auto;
       margin-right: auto;
-      padding: 0 $pc-margin;
+      padding: 0;
     }
   }
 
