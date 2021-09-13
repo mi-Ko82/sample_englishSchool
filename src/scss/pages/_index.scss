@@ -86,3 +86,91 @@
     }
   }
 }
+
+// BBBが選ばれる理由
+$sp-side-margin: convert-vw(16px);
+
+.p-reason {
+  margin-top: 40px;
+  padding: 40px 0;
+  background-color: $theme-color;
+
+  @include mq(lg) {
+    margin-top: 80px;
+    padding: 80px 0;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: calc(100% - #{$sp-side-margin});
+    background-color: $color-white;
+    padding: 24px 20px;
+    transition: transform 1s;
+
+    @include mq(lg) {
+      justify-content: center;
+      width: 50%;
+      padding: 70px 0;
+    }
+
+    &:first-child {
+      margin-right: auto;
+      border-radius: 0 20px 20px 0;
+      transform: translateX(-100%);
+
+      &::before {
+        content: '';
+        display: block;
+        flex: 0 0 87px;
+        width: 87px;
+        height: 60px;
+        background: url('/img/ico_reason_online.png') no-repeat center/contain;
+      }
+    }
+
+    &:last-child {
+      margin-top: 40px;
+      margin-left: auto;
+      border-radius: 20px 0 0 20px;
+      transform: translateX(100%);
+
+      &::before {
+        content: '';
+        display: block;
+        flex: 0 0 51px;
+        width: 51px;
+        height: 60px;
+        background: url('/img/ico_reason_teacher.png') no-repeat center/contain;
+      }
+    }
+
+    &.is-show {
+      // &:nth-child(odd) {
+      transform: translateX(0);
+      // }
+    }
+  }
+
+  &__text {
+    margin-left: 30px;
+    font-size: 1.8rem;
+
+    &--color {
+      display: block;
+      font-size: 2.4rem;
+      color: $theme-color;
+
+      @include mq(lg) {
+        font-size: 2.8rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
