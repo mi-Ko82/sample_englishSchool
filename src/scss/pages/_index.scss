@@ -292,3 +292,94 @@ $sp-side-margin: convert-vw(16px);
     font-size: 1.2rem;
   }
 }
+
+// スクールの概要
+.p-outline {
+  position: relative;
+  padding: 60px 0;
+  background-color: $color-bg-gray;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: url('/img/bg_circle.svg') repeat;
+    background-size: 350px 350px;
+    animation: bgCircleSP 10s infinite linear;
+
+    @include mq(lg) {
+      background-size: 700px 700px;
+      animation: bgCirclePC 10s infinite linear;
+    }
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+
+    @include mq(lg) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    background-color: $color-white;
+    border-radius: 20px;
+    margin-top: 32px;
+    padding: 30px;
+
+    @include mq(lg) {
+      width: 410px;
+      padding: 60px;
+    }
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    &--en {
+      display: block;
+      font-size: 1.6rem;
+    }
+
+    @include mq(lg) {
+      font-size: 2.8rem;
+
+      &--en {
+        font-size: 1.8rem;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
+}
+
+@keyframes bgCircleSP {
+  100% {
+    background-position: -350px 350px;
+  }
+}
+
+@keyframes bgCirclePC {
+  100% {
+    background-position: -700px 700px;
+  }
+}
