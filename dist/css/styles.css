@@ -1142,7 +1142,7 @@ body.is-open {
   flex: 0 0 87px;
   width: 87px;
   height: 60px;
-  background: url('./img/ico_reason_online.png') no-repeat center/contain;
+  background: url('../img/ico_reason_online.png') no-repeat center/contain;
 }
 .p-reason__item:last-child {
   margin-top: 40px;
@@ -1158,7 +1158,7 @@ body.is-open {
   flex: 0 0 51px;
   width: 51px;
   height: 60px;
-  background: url('./img/ico_reason_teacher.png') no-repeat center/contain;
+  background: url('../img/ico_reason_teacher.png') no-repeat center/contain;
 }
 .p-reason__item.is-show {
   -webkit-transform: translateX(0);
@@ -1307,7 +1307,7 @@ body.is-open {
   left: 0;
   right: 0;
   z-index: 1;
-  background: url('./img/bg_circle.svg') repeat;
+  background: url('../img/bg_circle.svg') repeat;
   background-size: 350px 350px;
   -webkit-animation: bgCircleSP 10s infinite linear;
   animation: bgCircleSP 10s infinite linear;
