@@ -1,7 +1,15 @@
-# base
+# 英会話スクールの模写サイト
+## 参考サイト
+https://code-step.com/lp-menu/
 
-## 環境
-- npm-script
-- typescript
-- eslint
-- webpack
+こちらのデザインを使用しました。
+ソースコードは見ずに作成しています。
+
+## 使用言語・ツール・ライブラリ等
+- pug
+- Sass
+- Javascript
+- Swiper
+
+## テンプレート
+https://github.com/mi-Ko82/base
